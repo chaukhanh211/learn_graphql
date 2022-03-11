@@ -8,4 +8,32 @@ const getBooks = gql`
     }
   }
 `;
-export { getBooks };
+
+const getSingleBook = gql`
+  query getSingleBookQuery($id: ID!) {
+    book(id: $id) {
+      id
+      name
+      genre
+      author {
+        id
+        name
+        age
+        books {
+          id
+          name
+        }
+      }
+    }
+  }
+`;
+
+const getAuthors = gql`
+  query getAuhtorsQuery {
+    authors {
+      id
+      name
+    }
+  }
+`;
+export { getBooks, getSingleBook, getAuthors };
