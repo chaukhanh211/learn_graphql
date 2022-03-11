@@ -1,6 +1,7 @@
 const { ApolloServer } = require("apollo-server-express");
 var express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 // Load schema & resolvers
 const typeDefs = require("./schema/schema");
@@ -9,7 +10,7 @@ const resolvers = require("./resolver/resolver");
 const mongoDataMethods = require("./data/db");
 
 const app = express();
-
+app.use(cors());
 //Connect to MongoDB
 const connectDB = async () => {
   try {

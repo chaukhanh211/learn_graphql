@@ -5,7 +5,7 @@ import Forms from "./components/Forms";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
+  uri: "https://learn-graphql-2022-03.herokuapp.com/",
   cache: new InMemoryCache(),
 });
 
